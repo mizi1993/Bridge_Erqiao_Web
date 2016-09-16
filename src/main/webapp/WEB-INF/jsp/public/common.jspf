@@ -1,0 +1,5 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="${pageContext.request.contextPath}/images/css.css" rel="stylesheet" type="text/css" />
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/Calendar/WdatePicker.js"></script>

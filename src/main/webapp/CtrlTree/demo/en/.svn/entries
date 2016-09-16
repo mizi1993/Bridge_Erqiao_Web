@@ -1,0 +1,83 @@
+10
+
+dir
+4
+https://192.168.2.8/svn/JYBS/%E6%BA%90%E7%A0%81/BHMS_JY/WAS/CtrlTree/demo/en
+https://192.168.2.8/svn/JYBS
+
+
+
+2013-01-30T07:18:31.790188Z
+4
+yd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+69de9e50-5a0d-0041-baa1-004fffb6eac1
+
+exedit
+dir
+
+exhide
+dir
+
+asyncData
+dir
+
+core
+dir
+
+excheck
+dir
+
+index.html
+file
+
+
+
+
+2013-01-30T07:25:20.248541Z
+b93a5422433b72c600f4268a06594466
+2013-01-30T07:18:31.790188Z
+4
+yd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6958
+
+bigdata
+dir
+
+super
+dir
+

@@ -1,0 +1,296 @@
+body {
+	color: #FFFFF;
+	font-size: 12px;
+	text-decoration: none;
+	SCROLLBAR-FACE-COLOR: #2F404B;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; 
+	SCROLLBAR-SHADOW-COLOR: #2A5273;
+	SCROLLBAR-ARROW-COLOR: #ffffff;
+	SCROLLBAR-DARKSHADOW-COLOR: #ffffff; 
+	SCROLLBAR-BASE-COLOR: #ffffff;
+	background-color: #303030;
+	CURSOR: url('mouse.ani'); 
+}
+
+form
+{ 
+  margin:0px;
+}
+
+table 
+{  
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+.TextGold 
+{  
+	font-size: 12px;
+	color: Gold;
+}
+
+.TextWhite
+{  
+	font-size: 12px;
+	color: White;
+}
+
+.TextBlue 
+{  
+	font-size: 12px;
+	color: DeepSkyBlue;
+}
+
+.TextYellow 
+{  
+	font-size: 12px;
+	color: Yellow;
+}
+
+.TextPink 
+{  
+	font-size: 12px;
+	color: #FF00FF;
+}
+
+.Number
+{
+	color: Lime;
+	font-family: "Arial Black";
+    FONT-SIZE: 16px;
+    BACKGROUND-COLOR:  transparent;
+    filter: DropShadow(Color=#000000, OffX=1, OffY=1);
+}
+.GroupboxTitle 
+{  
+	font-size: 12px;
+	color: DeepSkyBlue;
+}
+
+.TextGray 
+{  
+	font-size: 12px;
+	color: #CFCFCF;
+}
+
+.TextLime 
+{  
+	font-size: 13px;
+	color: Lime;
+}
+
+.TableBannerBg 
+{
+	background-image: url(b2.gif);
+	background-repeat: repeat-x;
+	background-position: left 0;
+}
+
+.GridTitle
+{
+	color: Gold;
+	font-family: "黑体";
+    FONT-SIZE: 16px;
+    BACKGROUND-COLOR:  transparent;
+    filter: DropShadow(Color=#000000, OffX=1, OffY=1);
+}
+
+.GridTitle
+{
+	color: Gold;
+	font-family: "黑体";
+    FONT-SIZE: 16px;
+    BACKGROUND-COLOR:  transparent;
+    filter: DropShadow(Color=#000000, OffX=1, OffY=1);
+}
+
+.InputText
+{
+	width:120px;
+	font-size: 9pt;
+	color: Gold;
+	border: 1px solid #CCCCCC;
+	BACKGROUND-COLOR: #191919;
+
+}
+
+.RadioButton 
+{
+	font-size: 9pt;
+	color: White;
+	border: 0px solid #CCCCCC;
+	BACKGROUND-COLOR: #303030;
+
+}
+
+.SelectDrop
+{
+	font-size: 12px;
+	color: Gold;
+	background-color: #000001;
+}
+
+.ButtonLogin
+{
+	Background-color:transparent;
+	border: 0px;
+	width:103px;
+	height:43px;
+	cursor:hand;
+}
+
+a {font-size: 12px; color: #FFFFCC; text-decoration: none;	line-height: 22px;}
+a:hover  {text-decoration:underline; color: #FFFF00; font-size: 12px;}
+a:active {text-decoration:overline;color:#00BFFF;}
+
+.Button
+{
+	cursor: hand;
+	color: #FFFFFF;
+	height: 20px;
+	background-color: #2F404B;
+	background-image: url(BgButton.png);
+	border: 1px solid #CCCCCC;
+	font-size: 9pt;
+}
+
+.ButtonInGrid
+{
+	cursor: hand;
+	color: #FFFFFF;
+	width:60px;
+	height: 20px;
+	background-color: #2F404B;
+}
+
+.ButtonValueDiv
+{
+	color: Lime;
+	font-family: "Arial";
+	width:80px;
+	height: 20px;
+	background-color: #999999;
+	border: 1px solid #666666;
+	font-size: 12pt;
+}
+
+.ButtonSensor
+{
+	padding: 0 0 0 0;
+	color: #FFFFFF;
+	font-family: "Arial";
+	width:17px;
+	height: 17px;
+	background-color: transparent;
+	background-image: url(../images/IconSensor/Cable.gif);
+	border: 0px solid #CCCCCC;
+	font-size: 9pt;
+}
+a.NumberBlue
+{
+	color: #006699;
+	font-family: "Arial Black";
+    FONT-SIZE: 22px;
+    BACKGROUND-COLOR:  transparent;
+    filter: DropShadow(Color=#000000, OffX=2, OffY=2);
+}
+
+a.NumberBlue:hover
+{
+	color: #006600;
+	font-family: "Arial Black";
+    FONT-SIZE: 28px;
+    BACKGROUND-COLOR:  transparent;
+    filter: DropShadow(Color=#000000, OffX=2, OffY=2);
+    text-decoration:none;
+}
+
+.NumberOrange
+{
+	color: Orange;
+	font-family: "Arial Black";
+    FONT-SIZE: 22px;
+    BACKGROUND-COLOR:  transparent;
+    filter: DropShadow(Color=#000000, OffX=2, OffY=2);
+}
+
+.NumberRed
+{
+	color: Red;
+	font-family: "Arial Black";
+    FONT-SIZE: 22px;
+    BACKGROUND-COLOR:  transparent;
+    filter: DropShadow(Color=#000000, OffX=2, OffY=2);
+}
+
+.GVHeader
+{
+	height:25px;
+	background-image: url(BgGVHeader.png);
+	text-align:left;
+	color:#FFFFFF;
+}
+.TableHeader
+{
+	height:27px;
+	background-image: url(BgGVHeader.png);
+	text-align:left;
+	color:Gold;
+	FONT-SIZE: 14px;
+	padding: 0 0 0 5px;
+}
+
+.CurveHeader
+{
+	height:25px;
+	background-image: url(BgGVHeader.png);
+	text-align:center;
+	color: Gold;
+    FONT-SIZE: 13px;
+}
+
+.GVRow
+{
+	height:25px;
+	text-align:left;
+}
+.GV
+{
+	 border: 1px #666666 solid; 
+}
+
+.BodyMap1
+{
+	background-image: url(../images/Bridge1/Map.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.BodyMap2
+{
+	background-image: url(../images/Bridge2/Map.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.TdTitle
+{
+	height:25px;
+	background-image: url(BgTdTitle.gif);
+	text-align:Center;
+	color: #FFFF66;
+	FONT-SIZE: 13px;
+	padding: 0 0 0 5px;
+}
+.TdContent
+{
+	padding: 7px 10px 7px 10px;
+	FONT-SIZE: 13px;
+}
+.TdNumber
+{
+	Color: #333333;
+	FONT-SIZE: 13px;
+	font-family: "Arial";
+	background-color:#CCCCCC; 
+}

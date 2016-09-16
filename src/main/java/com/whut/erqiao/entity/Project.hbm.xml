@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+        SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.whut.erqiao.entity">
+	<class name="Project" table="project">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="area"/>
+		<property name="position" />
+		<property name="parts"/>
+		<property name="grade"/>
+		<property name="date"/>
+		<property name="isDone"/>
+	</class>
+</hibernate-mapping>

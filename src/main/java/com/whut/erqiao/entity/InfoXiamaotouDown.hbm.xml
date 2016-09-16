@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- ~ Hibernate, Relational Persistence for Idiomatic Java ~ ~ License: 
+	GNU Lesser General Public License (LGPL), version 2.1 or later. ~ See the 
+	lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>. -->
+<!DOCTYPE hibernate-mapping
+        SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.whut.erqiao.entity">
+	<class name="InfoXiamaotouDown" table="infoXiamaotouDown">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="date" />
+		<property name="time" />
+		<property name="position" />
+		<property name="hougai_level"/>
+		<property name="hougaiDes"/>
+		<property name="hougaiJson"/>
+		<property name="yaban_level"/>
+		<property name="yabanDes"/>
+		<property name="yabanJson"/>
+		<property name="dianban_level"/>
+		<property name="dianbanDes"/>
+		<property name="dianbanJson"/>
+		<property name="luoshuan_level"/>
+		<property name="luoshuanDes"/>
+		<property name="luoshuanJson"/>
+		<property name="maokuaitong_level"/>
+		<property name="maokuaitongDes"/>
+		<property name="maokuaitongJson"/>
+		<property name="maoguqu_level"/>
+		<property name="maoguquDes"/>
+		<property name="maoguquJson"/>
+		<property name="chuxiu"/>
+		<property name="jishui"/>
+		<property name="other"/>
+		<many-to-one name="task" class="Task" column="taskId"></many-to-one>
+	</class>
+
+</hibernate-mapping>

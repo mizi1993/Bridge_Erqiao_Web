@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.whut.erqiao.entity">
+	<class name="Task" table="task">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="mac_id" />
+		<property name="name" />
+		<property name="date" />
+		<property name="temp" />
+		<property name="staff" />
+		<property name="nextDate" />
+		<property name="infoName"/>
+		<set name="infoShensuofeng" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoShensuofeng"></one-to-many>
+		</set>
+		<set name="infoGanghengliang" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoGanghengliang"></one-to-many>
+		</set>
+		<set name="infoGangxiangliang" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoGangxiangliang"></one-to-many>
+		</set>
+		<set name="infoLiefeng" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoLiefeng"></one-to-many>
+		</set>
+		<set name="infoShangmaotou" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoShangmaotou"></one-to-many>
+		</set>
+		<set name="infoTuxiangliang" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoTuxiangliang"></one-to-many>
+		</set>
+		<set name="infoZhizuo" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoZhizuo"></one-to-many>
+		</set>
+		<set name="infoXiamaotouUp" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoXiamaotouUp"></one-to-many>
+		</set>
+		<set name="infoXiamaotouDown" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoXiamaotouDown"></one-to-many>
+		</set>
+		<set name="infoXielasuo" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoXielasuo"></one-to-many>
+		</set>
+		<set name="infoTazhu" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoTazhu"></one-to-many>
+		</set>
+		<set name="infoHupo" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoHupo"></one-to-many>
+		</set>
+		<set name="infoYuyingli" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoYuyingli"></one-to-many>
+		</set>
+		<set name="infoMaogukuai" cascade="all" order-by="id asc">
+		    <key column="taskId"/>
+		    <one-to-many class="InfoMaogukuai"></one-to-many>
+		</set>
+		
+	</class>
+
+</hibernate-mapping>
