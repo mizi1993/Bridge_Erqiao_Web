@@ -5,10 +5,20 @@
 
 <struts><!-- struts中不用刻意配置拦截器，fileUpload拦截器已经定义在defaultStack默认拦截器中，会被默认调用。 -->
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
-    <constant name="struts.devMode" value="false" /><!-- 配置开发模式 -->
-    <constant name="struts.action.extension" value="action" /><!-- 配置扩展名必须为.action -->
-    <constant name="struts.ui.theme" value="simple" /><!-- 把主题配置为simple -->
-    <constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 配置扩展名必须为.action -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- 表示Action由Spring来进行创建，可以直接使用Spring依赖注入来注入 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 -->
+    <constant name="struts.serve.static.browserCache" value="false" />
+	<!-- 当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开 -->
+    <constant name="struts.configuration.xml.reload" value="true" />
+	<!--配置开发模式， 开发模式下使用,设置为true这样可以打印出更详细的错误信息 -->
+    <constant name="struts.devMode" value="false" />
+    <!-- 默认的视图主题为simple -->
+	<constant name="struts.ui.theme" value="simple" />
+    <!--解决乱码    -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<!-- 指定允许上传的文件最大字节数。默认值是2097152(2M) -->
 	<constant name="struts.multipart.maxSize" value="10485760" />
 	<!-- 设置上传文件的临时文件夹,默认使用javax.servlet.context.tempdir -->
@@ -50,8 +60,10 @@
     		<result name="printSuccess" type="redirectAction">fileDownload?fileName=${fileName}</result>
     			</action>
     	<action name="*_*" class="{1}Action" method="{2}">
-    	     <result name="toTaskShow" type="redirectAction">task_show?id=${taskId}</result>
+    	    <result name="toTaskShow" type="redirectAction">task_show?id=${taskId}</result>
     	    <result name="show">/WEB-INF/jsp/{1}/show.jsp</result>
+			<result>/WEB-INF/jsp/RiChang/{1}.jsp </result>
+            <result  name="save" type="chain">{1}</result>
     	    <param name="uploadDir">/docs</param>
     	</action>
     	<action name="fileDownload" class="com.whut.bridge_erqiao_periodical.action.FileDownloadAction" method="load">

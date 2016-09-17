@@ -11,8 +11,10 @@
             http://www.springframework.org/schema/context/spring-context.xsd"
 	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context">
-	<!-- 激活@Required@Autowired,JSR250'S@PostConstruct,@PreDestroy and @Resource等标注 -->
+	<!-- 打开Spring的Annotation支持,激活@Required@Autowired,JSR250'S@PostConstruct,@PreDestroy and @Resource等标注 -->
 	<context:annotation-config />
+	<!--设定Spring 去哪些包中找Annotation -->
+	<context:component-scan base-package="com.erqiao.rc" />
     <context:component-scan base-package="com.whut.erqiao"></context:component-scan>
 	<!-- 导入外部的properties文件 -->
 	<context:property-placeholder location="classpath:jdbc.properties" />
@@ -22,33 +24,61 @@
 		<property name="driverClass" value="${driverClass}"></property>
 		<property name="user" value="${user}"></property>
 		<property name="password" value="${password}"></property>
+		<!--c3p0 -->
 		<!-- 初始化3个链接 -->
 		<property name="initialPoolSize" value="3"></property>
+		<!--连接池中保留的最小连接数。 -->
 		<property name="minPoolSize" value="3"></property>
+		<!--连接池中保留的最大连接数。Default: 15 -->
 		<property name="maxPoolSize" value="15"></property>
-		<!-- 当连接池中的连接耗尽时c3p0一次同时获取的连接数 -->
+		<!-- 当连接池中的连接耗尽时c3p0一次同时获取的连接数 Default: 3-->
 		<property name="acquireIncrement" value="3"></property>
 		<!-- 控制数据源内加载的PrepareStatements的数量 -->
 		<property name="maxStatements" value="8"></property>
 		<!-- 单个连接所拥有的最大缓存statements数 -->
 		<property name="maxStatementsPerConnection" value="5"></property>
-		<!-- 最大空闲时间，1800秒内未使用则连接会被丢弃 -->
+		<!-- 最大空闲时间，1800秒内未使用则连接会被丢弃 Default: 0-->
 		<property name="maxIdleTime" value="1800"></property>
 
 	</bean>
+	
+	<!--创建Spring的SessionFactory工厂 -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<!-- 指定hibernate配置文件位置 -->
 		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
-		<!-- 配置数据库 连接池 -->
+		<!-- 配置数据库 连接池 , 注入数据源 -->
 		<property name="dataSource" ref="dataSource" />
+		<!-- 设置Spring取那个包中查找相应的实体类 -->
+		<property name="packagesToScan">
+			<value>com.erqiao.rc.domain</value>
+		</property>
 	</bean>
-
-	<!-- 配置事务管理，采用注解方式 -->
+	
+	<!-- 配置Spring的事务处理 -->
+	<!-- 创建事务管理器-->
 	<bean id="txManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	<!-- 配置AOP，Spring是通过AOP来进行事务管理的 -->
+    <aop:config>
+  		<!-- 设置pointCut表示哪些方法要加入事务处理 -->
+        <aop:pointcut id="allMethods"
+                expression="execution(* com.erqiao.rc.dao.*.*(..))"/>
+        <!-- 通过advisor来确定具体要加入事务控制的方法 -->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="allMethods"/>
+    </aop:config>
+	<!-- 配置哪些方法要加入事务控制 -->
+	 <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+			<tx:method name="get*" read-only="true"/>
+			<!-- 其他方法使用默认的事务设置，指定超时时长为5秒 -->
+			<tx:method name="*" isolation="DEFAULT"
+			propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+	<!-- 配置事务管理，采用注解方式 -->
 	<tx:annotation-driven transaction-manager="txManager" />
 
 </beans>

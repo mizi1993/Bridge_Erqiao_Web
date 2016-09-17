@@ -34,8 +34,8 @@
                     {name: "日常巡检", open: true,
                     children: [
                     //    			            { name: "巡检结果导入", iconSkin: "icon04", click: "top.document.getElementById('mainPanel_iframe').src = '${pageContext.request.contextPath}/Record_RC/Import.aspx';" },
-                            {name: "巡检结果管理", iconSkin: "icon04", click: "top.document.getElementById('mainPanel_iframe').src = '${pageContext.request.contextPath}/Record_RC/Patrol.aspx';" },
-                            { name: "特殊事件管理", iconSkin: "icon04", click: "top.document.getElementById('mainPanel_iframe').src = '${pageContext.request.contextPath}/Record_RC/Special.aspx';" }
+                            {name: "巡检结果管理", iconSkin: "icon04", click: "top.document.getElementById('mainPanel_iframe').src = '${pageContext.request.contextPath}/Patrol.action';" },
+                            { name: "特殊事件管理", iconSkin: "icon04", click: "top.document.getElementById('mainPanel_iframe').src = '${pageContext.request.contextPath}/Special.action';" }
                         ]
                 },
 			    //			        { name: "专项检查", open: true,
